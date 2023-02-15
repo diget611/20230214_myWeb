@@ -11,9 +11,9 @@
 	<jsp:include page="/WEB-INF/view/header.jsp"/>
 	<section>
 		<form action="login" method="post">
-			id: <input type="text" name="n1">
+			id: <input type="text" name="id">
 			<br>
-			pw: <input type="password" name="n2">
+			pw: <input type="password" name="passwd">
 			<br>
 			<button type="submit">로그인하기</button>
 			<button type="button" class="btn enroll">회원가입</button>

@@ -20,4 +20,20 @@ public class MemberService {
 		close(conn);
 		return result;
 	}
+	
+	public MemberVo login(MemberVo vo) {
+		MemberVo result = null;
+		Connection conn = getConnection();
+		result = new MemberDao().login(conn, vo);
+		close(conn);
+		return result;
+	}
+	
+	public MemberVo myinfo(String id) {
+		MemberVo result = null;
+		Connection conn = getConnection();
+		result = new MemberDao().myinfo(conn, id);
+		close(conn);
+		return result;
+	}
 }

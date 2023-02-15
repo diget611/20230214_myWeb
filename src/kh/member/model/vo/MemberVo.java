@@ -6,7 +6,7 @@ package kh.member.model.vo;
  * TEST_MEMBER 테이블을 이용하여
  * 첫화면("/") header - index.jsp, include header.jsp - 로그인(login get) / 로그아웃(logout get) 버튼 토글, nav 내정보보기(myinfo get) 버튼 
  * 로그인 화면 - 로그인(login post) / 회원가입(enroll get)
- * 회원가입("/enroll") - get enroll.jsp, post 회원가입DB 다녀온 후 / 이동
+ * 회원가입("/enroll") - get enroll.jsp, post 회원가입DB 다녀온 후 / 이동, ID 중복 확인
  * 회원가입화면 - 회원가입(enroll post) 버튼
  * 로그인("/login") - get login.jsp, post 로그인DB 다녀온 후 session("lgnss")등록(name, email, id) 및 / 이동
  * 로그아웃("/logout") - get 세션만료 후 / 이동
