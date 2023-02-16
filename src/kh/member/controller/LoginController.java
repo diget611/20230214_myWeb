@@ -35,12 +35,12 @@ public class LoginController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("login Post");
-
+		// 1.
 		MemberVo vo = new MemberVo();
 		vo.setId(request.getParameter("id"));
 		vo.setPasswd(request.getParameter("passwd"));
 		
+		// 2.
 		MemberVo result = new MemberService().login(vo);
 		if(result != null) {
 			System.out.println("로그인 성공"); 
@@ -49,6 +49,11 @@ public class LoginController extends HttpServlet {
 			System.out.println("로그인 실패");
 		}
 		
+		// 3. 페이지 이동 및 데이터 전달 (셋 중 하나는 꼭 필요)
+		// 3-1 response.sendRedirect(request.getContextPath + "url"); 페이지 이동만
+		// 3-2 request.setAttribute("name", "value");
+		// 3-2 request.getRequestDispatcher("xxx.jsp").forward(request, response); 값과 함께 이동
+		// 3-3 out.println(값); out.flush(); out.close(); ajax, 페이지 이동 없이 값만 전달
 		response.sendRedirect(request.getContextPath() + "/");
 	}
 

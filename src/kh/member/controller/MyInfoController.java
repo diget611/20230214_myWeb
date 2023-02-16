@@ -35,7 +35,7 @@ public class MyInfoController extends HttpServlet {
 			id = ((MemberVo)(request.getSession().getAttribute("lgnss"))).getId();			
 		}
 		
-		if(id != null) {		
+		if(id != null) {
 			request.setAttribute("myinfo", new MemberService().myinfo(id));
 		}
 		

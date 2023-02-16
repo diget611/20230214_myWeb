@@ -18,7 +18,7 @@
 	<script>
 		$(".btn.login").on("click", handlerClickBtnLogin);
 		$(".btn.logout").on("click", handlerClickBtnLogout);
-		$(".btn.myinfo").on("click", handlerClickBtnMyinfo)
+		$(".btn.myinfo").on("click", handlerClickBtnMyinfo);
 		
 		function handlerClickBtnLogin(){
 			console.log("LoginBtn Click");
@@ -27,7 +27,7 @@
 		function handlerClickBtnLogout(){ 
 			console.log("LogoutBtn Click");
 		}
-		function handlerClickBtnMyinf(){
+		function handlerClickBtnMyinfo(){
 			location.href="<%=request.getContextPath()%>/myinfo";
 		}
 	</script>

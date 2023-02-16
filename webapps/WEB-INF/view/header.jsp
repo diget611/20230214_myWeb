@@ -20,4 +20,21 @@
 		<% } %>
 	</div>
 	<hr>
+	<script>
+		$(".btn.login").on("click", handlerClickBtnLogin);
+		$(".btn.logout").on("click", handlerClickBtnLogout);
+		$(".btn.myinfo").on("click", handlerClickBtnMyinfo);
+		
+		function handlerClickBtnLogin(){
+			console.log("LoginBtn Click");
+			location.href="<%=request.getContextPath()%>/login";
+		}
+		function handlerClickBtnLogout(){ 
+			console.log("LogoutBtn Click");
+			location.href="<%=request.getContextPath()%>/logout"
+		}
+		function handlerClickBtnMyinfo(){
+			location.href="<%=request.getContextPath()%>/myinfo";
+		}
+	</script>
 </header>
