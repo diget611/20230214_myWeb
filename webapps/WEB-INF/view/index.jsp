@@ -15,6 +15,10 @@
 	<c:if test="${not empty lgnss}">
 		<button type="button" class="btn myinfo">My Page</button>
 	</c:if>
+	
+	<jsp:include page="/WEB-INF/view/board/boardList.jsp"/>
+	
+	${boardList }
 	<script>
 		$(".btn.login").on("click", handlerClickBtnLogin);
 		$(".btn.logout").on("click", handlerClickBtnLogout);

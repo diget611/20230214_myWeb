@@ -19,13 +19,14 @@ public class HomeController extends HttpServlet {
      */
     public HomeController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// DB 가서 게시글 목록 가져오기
+		request.setAttribute("boardList", "값");
 		request.getRequestDispatcher("/WEB-INF/view/index.jsp").forward(request, response);;
 	}
 
