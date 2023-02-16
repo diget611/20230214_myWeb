@@ -31,7 +31,7 @@
 		}
 		function handlerClickBtnLogout(){ 
 			console.log("LogoutBtn Click");
-			location.href="<%=request.getContextPath()%>/logout"
+			location.href="<%=request.getContextPath()%>/logout";
 		}
 		function handlerClickBtnMyinfo(){
 			location.href="<%=request.getContextPath()%>/myinfo";

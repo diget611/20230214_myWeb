@@ -11,6 +11,24 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/view/header.jsp"/>
+	<h4>EL request Attribute</h4>
+	<c:if test="${empty myinfo }">
+		<div>
+			<h4>로그인 되지 않았습니다.</h4>
+			<a href="<%=request.getContextPath()%>/login">로그인 페이지 이동</a>
+		</div>
+	</c:if>
+
+	<c:if test="${not empty myinfo }">
+		<div>
+			id: ${myinfo.id } | name: ${myinfo.name } | email: ${myinfo.email }
+		</div>
+	</c:if>	
+	
+	<h4>EL session Attribute</h4>
+	id: ${lgnss.id } | name: ${lgnss.name } | email: ${lgnss.email }
+	
+	<h4>JSP request Attribute</h4>
 	<%	
 		Object obj = request.getAttribute("myinfo");
 		MemberVo vo = null;
@@ -31,12 +49,12 @@
 	<%
 			} else {
 	%>
-				id: <%=vo.getId() %>
-				name: <%=vo.getName() %>
-				email: <%=vo.getEmail() %>
+				id: <%=vo.getId() %> | name: <%=vo.getName() %> | email: <%=vo.getEmail() %>
 	<%
 			}
 		}
 	%>
+
+	
 </body>
 </html>

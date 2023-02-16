@@ -30,16 +30,23 @@ public class MyInfoController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 1 정보 받기
 		// 2 나의 id에 해당하는 정보를 db에서 읽어오기
-		String id = "";
+		String id = null;
 		if(request.getSession().getAttribute("lgnss") != null) {
 			id = ((MemberVo)(request.getSession().getAttribute("lgnss"))).getId();			
 		}
 		
 		if(id != null) {
 			request.setAttribute("myinfo", new MemberService().myinfo(id));
+			request.getRequestDispatcher("/WEB-INF/view/member/myinfo.jsp").forward(request, response);
+		} else {
+			// 방법 1 : 로그인이 필요한 모든 jsp 페이지에서 같은 코드를 작성해줘야 함
+			// request.getRequestDispatcher("/WEB-INF/view/member/myinfo.jsp").forward(request, response);
+			
+			// 방법 2 : 로그인 정보가 없을 때, 하나의 error page를 만들어 줌
+			request.setAttribute("errMsg", "로그인이 필요합니다.");
+			request.getRequestDispatcher("/WEB-INF/view/error/errorLogin.jsp").forward(request, response);
 		}
 		
-		request.getRequestDispatcher("/WEB-INF/view/member/myinfo.jsp").forward(request, response);
 	}
 
 }
