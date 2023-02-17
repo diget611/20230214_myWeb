@@ -18,7 +18,6 @@
 	
 	<jsp:include page="/WEB-INF/view/board/boardList.jsp"/>
 	
-	${boardList }
 	<script>
 		$(".btn.login").on("click", handlerClickBtnLogin);
 		$(".btn.logout").on("click", handlerClickBtnLogout);
