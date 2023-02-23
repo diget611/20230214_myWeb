@@ -16,4 +16,21 @@ public class BoardService {
 		close(conn);
 		return result;
 	}
+	
+	// overloading
+	public List<BoardVo> getBoardList(int start, int end) {
+		List<BoardVo> result = null;
+		Connection conn = getConnection();
+		result = new BoardDao().getBoardList(conn, start, end);
+		close(conn);
+		return result;
+	}
+
+	public int getCountBoard() {
+		int result = 0;
+		Connection conn = getConnection();
+		result = new BoardDao().getCountBoard(conn);
+		close(conn);
+		return result;
+	}
 }
